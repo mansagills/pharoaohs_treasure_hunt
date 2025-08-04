@@ -1,0 +1,177 @@
+[
+  {
+    "id": "ancient_writing",
+    "title": "Hieroglyphic Writing",
+    "content": "Ancient Egyptians used hieroglyphs - a system of picture writing - for over 3,000 years. Each symbol could represent sounds, ideas, or objects.",
+    "chamber": 1,
+    "category": "writing"
+  },
+  {
+    "id": "rosetta_stone",
+    "title": "The Rosetta Stone",
+    "content": "The Rosetta Stone, discovered in 1799, helped scholars decode hieroglyphs because it contained the same text in three different scripts: hieroglyphic, demotic, and Greek.",
+    "chamber": 1,
+    "category": "discovery"
+  },
+  {
+    "id": "scribes_role",
+    "title": "Egyptian Scribes",
+    "content": "Scribes were highly respected in ancient Egypt. They could read and write, making them valuable for keeping records, writing letters, and copying religious texts.",
+    "chamber": 1,
+    "category": "society"
+  },
+  {
+    "id": "maat_goddess",
+    "title": "Ma'at - Goddess of Truth",
+    "content": "Ma'at was the Egyptian goddess of truth, justice, and cosmic order. She wore an ostrich feather, which was used to weigh the hearts of the dead.",
+    "chamber": 2,
+    "category": "religion"
+  },
+  {
+    "id": "weighing_heart",
+    "title": "Weighing of the Heart",
+    "content": "Ancient Egyptians believed that after death, a person's heart was weighed against Ma'at's feather. If the heart was pure, the person could enter the afterlife.",
+    "chamber": 2,
+    "category": "afterlife"
+  },
+  {
+    "id": "42_laws",
+    "title": "The 42 Laws of Ma'at",
+    "content": "Ma'at established 42 laws that governed moral behavior in ancient Egypt, including 'I have not stolen' and 'I have not told lies.'",
+    "chamber": 2,
+    "category": "law"
+  },
+  {
+    "id": "anubis_god",
+    "title": "Anubis - God of the Dead",
+    "content": "Anubis, the jackal-headed god, was the protector of the dead and the guide to the afterlife. He oversaw the mummification process and judged souls.",
+    "chamber": 3,
+    "category": "religion"
+  },
+  {
+    "id": "mummification",
+    "title": "Mummification Process",
+    "content": "Ancient Egyptians mummified bodies to preserve them for the afterlife. The process took 70 days and involved removing organs and wrapping the body in linen.",
+    "chamber": 3,
+    "category": "death"
+  },
+  {
+    "id": "canopic_jars",
+    "title": "Canopic Jars",
+    "content": "During mummification, organs were stored in special containers called canopic jars. Each jar was protected by a different god: Imsety (liver), Duamutef (stomach), Hapi (lungs), and Qebehsenuef (intestines).",
+    "chamber": 3,
+    "category": "death"
+  },
+  {
+    "id": "horus_god",
+    "title": "Horus - The Sky God",
+    "content": "Horus was the falcon-headed god of the sky and kingship. Egyptian pharaohs were considered the living embodiment of Horus on Earth.",
+    "chamber": 4,
+    "category": "religion"
+  },
+  {
+    "id": "eye_of_horus",
+    "title": "The Eye of Horus",
+    "content": "The Eye of Horus was a powerful symbol of protection, royal power, and good health. It was often used as an amulet to ward off evil.",
+    "chamber": 4,
+    "category": "symbols"
+  },
+  {
+    "id": "pharaoh_divine",
+    "title": "Divine Pharaohs",
+    "content": "Ancient Egyptians believed their pharaohs were living gods. The pharaoh was seen as the intermediary between the gods and the people.",
+    "chamber": 4,
+    "category": "kingship"
+  },
+  {
+    "id": "thoth_god",
+    "title": "Thoth - God of Wisdom",
+    "content": "Thoth, the ibis-headed god, was the deity of wisdom, writing, and knowledge. He was said to have invented hieroglyphs and was the scribe of the gods.",
+    "chamber": 5,
+    "category": "religion"
+  },
+  {
+    "id": "book_of_dead",
+    "title": "The Book of the Dead",
+    "content": "The Book of the Dead was a collection of spells and instructions to help the deceased navigate the afterlife. It was often buried with mummies.",
+    "chamber": 5,
+    "category": "afterlife"
+  },
+  {
+    "id": "papyrus_invention",
+    "title": "Papyrus - Ancient Paper",
+    "content": "Egyptians invented papyrus, an early form of paper made from the papyrus plant. It was used for writing important documents and religious texts.",
+    "chamber": 5,
+    "category": "invention"
+  },
+  {
+    "id": "great_pyramid",
+    "title": "The Great Pyramid of Giza",
+    "content": "The Great Pyramid of Giza, built for Pharaoh Khufu around 2580 BC, is the only surviving Wonder of the Ancient World. It was the tallest building in the world for over 3,800 years.",
+    "chamber": 6,
+    "category": "architecture"
+  },
+  {
+    "id": "pyramid_construction",
+    "title": "Building the Pyramids",
+    "content": "The pyramids were built by thousands of skilled workers (not slaves as often depicted). They used ramps, levers, and pulleys to move massive stone blocks weighing up to 15 tons.",
+    "chamber": 6,
+    "category": "construction"
+  },
+  {
+    "id": "burial_treasures",
+    "title": "Pharaonic Burial Treasures",
+    "content": "Pharaohs were buried with vast treasures including gold jewelry, precious stones, furniture, and food for the afterlife. Tutankhamun's tomb contained over 5,000 objects.",
+    "chamber": 6,
+    "category": "burial"
+  },
+  {
+    "id": "nile_river",
+    "title": "The Life-Giving Nile",
+    "content": "The Nile River was essential to Egyptian civilization. Its annual floods brought fertile soil that allowed agriculture to flourish in the desert.",
+    "chamber": 0,
+    "category": "geography"
+  },
+  {
+    "id": "egyptian_calendar",
+    "title": "The Egyptian Calendar",
+    "content": "Ancient Egyptians created one of the first solar calendars with 365 days, divided into 12 months of 30 days each, plus 5 extra festival days.",
+    "chamber": 0,
+    "category": "science"
+  },
+  {
+    "id": "egyptian_medicine",
+    "title": "Ancient Egyptian Medicine",
+    "content": "Egyptians were skilled doctors who performed surgeries, set broken bones, and used over 700 different remedies. They understood the importance of hygiene and cleanliness.",
+    "chamber": 0,
+    "category": "medicine"
+  },
+  {
+    "id": "sphinx_riddle",
+    "title": "The Great Sphinx",
+    "content": "The Great Sphinx of Giza has the body of a lion and the head of a pharaoh. It guards the pyramids and represents the pharaoh's divine power and wisdom.",
+    "chamber": 0,
+    "category": "monuments"
+  },
+  {
+    "id": "cleopatra_fact",
+    "title": "Cleopatra VII",
+    "content": "Cleopatra VII was the last pharaoh of Egypt. She spoke nine languages and was known for her intelligence and political skills, not just her beauty.",
+    "chamber": 0,
+    "category": "rulers"
+  },
+  {
+    "id": "egyptian_gods",
+    "title": "Egyptian Pantheon",
+    "content": "Ancient Egyptians worshipped over 2,000 gods and goddesses. Each had specific roles, from protecting households to governing the afterlife.",
+    "chamber": 0,
+    "category": "religion"
+  },
+  {
+    "id": "daily_life",
+    "title": "Daily Life in Ancient Egypt",
+    "content": "Most Egyptians were farmers who lived in mud-brick houses. They ate bread, beer, onions, and garlic. Children played with toys like dolls, balls, and board games.",
+    "chamber": 0,
+    "category": "society"
+  }
+]

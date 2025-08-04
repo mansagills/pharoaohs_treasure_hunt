@@ -1,0 +1,547 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #2c1810 0%, #8b4513 100%);
+    color: #f4e4c1;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    padding: 2rem;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Menu Screen */
+#menu-screen {
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, rgba(255,215,0,0.1) 0%, transparent 70%);
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.game-title {
+    font-size: 4rem;
+    color: #ffd700;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.game-subtitle {
+    font-size: 1.5rem;
+    color: #deb887;
+    font-style: italic;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.menu-btn {
+    background: linear-gradient(45deg, #8b4513 0%, #daa520 100%);
+    border: 2px solid #ffd700;
+    color: #f4e4c1;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 8px;
+    min-width: 200px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.menu-btn:hover {
+    background: linear-gradient(45deg, #daa520 0%, #ffd700 100%);
+    color: #2c1810;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Hub Screen */
+#hub-screen {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.hub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #ffd700;
+}
+
+.hub-header h2 {
+    color: #ffd700;
+    font-size: 2.5rem;
+}
+
+.player-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.stat-label {
+    color: #deb887;
+}
+
+#tomb-map {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.chamber-door {
+    background: linear-gradient(45deg, #4a4a4a 0%, #2c2c2c 100%);
+    border: 3px solid #8b4513;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    min-height: 150px;
+}
+
+.chamber-door:hover {
+    border-color: #ffd700;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,215,0,0.3);
+}
+
+.chamber-door.unlocked {
+    background: linear-gradient(45deg, #8b4513 0%, #daa520 100%);
+    border-color: #ffd700;
+}
+
+.chamber-door.completed {
+    background: linear-gradient(45deg, #228b22 0%, #32cd32 100%);
+    border-color: #98fb98;
+}
+
+.chamber-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+}
+
+.chamber-name {
+    font-size: 1rem;
+    text-align: center;
+    color: #f4e4c1;
+}
+
+.chamber-lock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+}
+
+#treasure-altar {
+    background: linear-gradient(45deg, rgba(139,69,19,0.3) 0%, rgba(218,165,32,0.3) 100%);
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+#treasure-altar h3 {
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.relic-slots {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.relic-slot {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #8b4513;
+    border-radius: 50%;
+    background: radial-gradient(circle, #2c1810 0%, #4a4a4a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.relic-slot.filled {
+    border-color: #ffd700;
+    background: radial-gradient(circle, #ffd700 0%, #daa520 100%);
+    box-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+.relic-slot.filled::after {
+    content: '💎';
+    font-size: 2rem;
+}
+
+/* Chamber Screen */
+#chamber-screen {
+    background: linear-gradient(135deg, #1a0f0a 0%, #3d2914 100%);
+}
+
+.chamber-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.light-meter, .health-meter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.torch-icon, .heart-icon {
+    font-size: 1.5rem;
+}
+
+.light-bar {
+    width: 200px;
+    height: 20px;
+    background: #4a4a4a;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #8b4513;
+}
+
+#light-level {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4500 0%, #ffd700 50%, #ffff00 100%);
+    width: 100%;
+    transition: width 0.5s ease;
+}
+
+#health-hearts {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.heart {
+    font-size: 1.5rem;
+    color: #ff0000;
+}
+
+.heart.empty {
+    color: #4a4a4a;
+}
+
+.back-btn {
+    background: rgba(139,69,19,0.8);
+    border: 2px solid #8b4513;
+    color: #f4e4c1;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: rgba(218,165,32,0.8);
+    border-color: #ffd700;
+}
+
+.chamber-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#chamber-description {
+    background: rgba(0,0,0,0.3);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #ffd700;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+#puzzle-area {
+    flex: 1;
+    background: rgba(0,0,0,0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 300px);
+}
+
+/* Instructions Screen */
+#instructions-screen {
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2c1810 0%, #1a1a2e 100%);
+}
+
+.instructions-content {
+    max-width: 800px;
+    background: rgba(0,0,0,0.3);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid #ffd700;
+}
+
+.instructions-content h2 {
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.instruction-section {
+    margin-bottom: 2rem;
+}
+
+.instruction-section h3 {
+    color: #deb887;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.instruction-section p, .instruction-section li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.instruction-section ul {
+    padding-left: 2rem;
+}
+
+/* Overlay and Modal */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.modal {
+    background: linear-gradient(135deg, #2c1810 0%, #8b4513 100%);
+    border: 3px solid #ffd700;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 500px;
+    position: relative;
+    color: #f4e4c1;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #ffd700;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+/* Light Darkening Overlay */
+#darkness-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.8) 100%);
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#darkness-overlay.active {
+    opacity: 1;
+}
+
+#darkness-overlay.critical {
+    background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.95) 100%);
+    animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+#darkness-overlay.danger {
+    background: radial-gradient(circle at center, transparent 0%, rgba(139,0,0,0.3) 30%, rgba(0,0,0,0.98) 100%);
+    animation: danger-pulse 1s infinite;
+}
+
+@keyframes danger-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Torch flame effect */
+.torch-flame {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: radial-gradient(circle, rgba(255,165,0,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: torch-glow 3s infinite ease-in-out;
+}
+
+@keyframes torch-glow {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% { 
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.torch-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.torch-icon::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: radial-gradient(circle, rgba(255,69,0,0.4) 0%, transparent 60%);
+    border-radius: 50%;
+    animation: flame-flicker 2s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes flame-flicker {
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+    25% { opacity: 1; transform: scale(1.05); }
+    50% { opacity: 0.6; transform: scale(0.95); }
+    75% { opacity: 0.9; transform: scale(1.02); }
+}
+
+/* Enhanced chamber atmosphere */
+#chamber-screen {
+    position: relative;
+    overflow: hidden;
+}
+
+#chamber-screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255,140,0,0.1) 0%, transparent 25%),
+        radial-gradient(circle at 80% 20%, rgba(255,140,0,0.05) 0%, transparent 20%),
+        radial-gradient(circle at 60% 70%, rgba(255,140,0,0.08) 0%, transparent 30%);
+    pointer-events: none;
+    z-index: 1;
+    animation: torchlight-dance 8s infinite ease-in-out;
+}
+
+@keyframes torchlight-dance {
+    0%, 100% { opacity: 1; }
+    25% { opacity: 0.8; }
+    50% { opacity: 0.9; }
+    75% { opacity: 0.7; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 2.5rem;
+    }
+    
+    #tomb-map {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    
+    .chamber-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .light-bar {
+        width: 150px;
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharaoh's Treasure Hunt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="menu-screen" class="screen active">
+            <div class="title-container">
+                <h1 class="game-title">Pharaoh's Treasure Hunt</h1>
+                <p class="game-subtitle">Uncover the secrets of ancient Egypt</p>
+            </div>
+            <div class="menu-buttons">
+                <button class="menu-btn" id="start-game">Start Adventure</button>
+                <button class="menu-btn" id="instructions">Instructions</button>
+            </div>
+        </div>
+
+        <div id="hub-screen" class="screen">
+            <div class="hub-header">
+                <h2>Tomb Map</h2>
+                <div class="player-stats">
+                    <div class="stat">
+                        <span class="stat-label">Level:</span>
+                        <span id="player-level">1</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">XP:</span>
+                        <span id="player-xp">0</span>
+                    </div>
+                </div>
+            </div>
+            <div id="tomb-map"></div>
+            <div id="treasure-altar">
+                <h3>Sacred Relics</h3>
+                <div class="relic-slots">
+                    <div class="relic-slot" data-relic="1"></div>
+                    <div class="relic-slot" data-relic="2"></div>
+                    <div class="relic-slot" data-relic="3"></div>
+                    <div class="relic-slot" data-relic="4"></div>
+                    <div class="relic-slot" data-relic="5"></div>
+                    <div class="relic-slot" data-relic="6"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="chamber-screen" class="screen">
+            <div class="chamber-header">
+                <div class="light-meter">
+                    <div class="torch-icon">🔥</div>
+                    <div class="light-bar">
+                        <div id="light-level"></div>
+                    </div>
+                </div>
+                <div class="health-meter">
+                    <div class="heart-icon">❤️</div>
+                    <div id="health-hearts"></div>
+                </div>
+                <button id="back-to-hub" class="back-btn">↩ Back to Map</button>
+            </div>
+            <div class="chamber-content">
+                <div id="chamber-description"></div>
+                <div id="puzzle-area"></div>
+            </div>
+        </div>
+
+        <div id="instructions-screen" class="screen">
+            <div class="instructions-content">
+                <h2>How to Play</h2>
+                <div class="instruction-section">
+                    <h3>Your Mission</h3>
+                    <p>Explore the ancient tomb and collect six sacred relics to unlock the Pharaoh's Vault!</p>
+                </div>
+                <div class="instruction-section">
+                    <h3>Gameplay</h3>
+                    <ul>
+                        <li>🗺️ Navigate through chambers using the tomb map</li>
+                        <li>🔍 Solve hieroglyph puzzles and avoid traps</li>
+                        <li>🔥 Watch your torchlight - complete puzzles before it runs out</li>
+                        <li>❤️ Be careful of traps that can drain your health</li>
+                        <li>🏺 Collect power-ups to help you on your journey</li>
+                    </ul>
+                </div>
+                <button class="menu-btn" id="back-to-menu">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+        <div id="modal" class="modal">
+            <div id="modal-content"></div>
+            <button id="close-modal" class="close-btn">×</button>
+        </div>
+    </div>
+
+    <div id="darkness-overlay"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/puzzles/glyphMatch.js"></script>
+    <script src="js/puzzles/trapRun.js"></script>
+    <script src="js/components/progressBar.js"></script>
+    <script src="js/components/inventory.js"></script>
+    <script src="js/audio.js"></script>
+</body>
+</html>

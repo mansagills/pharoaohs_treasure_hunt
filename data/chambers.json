@@ -1,0 +1,374 @@
+[
+  {
+    "id": 1,
+    "name": "Hall of Scribes",
+    "difficulty": "easy",
+    "timeLimit": 120,
+    "description": "Ancient scribes practiced their hieroglyphic writing in this chamber. The walls are covered with educational inscriptions and practice exercises.",
+    "scribeMessage": "Welcome, young explorer! The scribes have left their wisdom here for you to discover.",
+    "puzzleType": "glyph-match",
+    "relic": 1,
+    "relicName": "Ankh of Eternal Life",
+    "puzzleData": {
+      "difficulty": "easy",
+      "timeLimit": 120,
+      "relic": 1,
+      "glyphs": [
+        {
+          "id": "ankh",
+          "symbol": "☥",
+          "meaning": "Life",
+          "pronunciation": "ankh"
+        },
+        {
+          "id": "eye",
+          "symbol": "𓂀",
+          "meaning": "Eye",
+          "pronunciation": "irt"
+        },
+        {
+          "id": "sun",
+          "symbol": "☉",
+          "meaning": "Sun",
+          "pronunciation": "ra"
+        },
+        {
+          "id": "water",
+          "symbol": "𓈖",
+          "meaning": "Water",
+          "pronunciation": "nu"
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Chamber of Ma'at",
+    "difficulty": "medium",
+    "timeLimit": 100,
+    "description": "This sacred chamber is dedicated to Ma'at, the goddess of truth and justice. Her feather weighs the hearts of mortals in the afterlife.",
+    "scribeMessage": "Ma'at sees all truths. Can you balance justice and wisdom in her sacred domain?",
+    "puzzleType": "glyph-match",
+    "relic": 2,
+    "relicName": "Feather of Ma'at",
+    "puzzleData": {
+      "difficulty": "medium", 
+      "timeLimit": 100,
+      "relic": 2,
+      "glyphs": [
+        {
+          "id": "feather",
+          "symbol": "𓆄",
+          "meaning": "Truth",
+          "pronunciation": "maat"
+        },
+        {
+          "id": "scales",
+          "symbol": "⚖️",
+          "meaning": "Justice",
+          "pronunciation": "tekh"
+        },
+        {
+          "id": "heart",
+          "symbol": "𓄿",
+          "meaning": "Heart",
+          "pronunciation": "ib"
+        },
+        {
+          "id": "soul",
+          "symbol": "𓅡",
+          "meaning": "Soul",
+          "pronunciation": "ba"
+        },
+        {
+          "id": "pharaoh",
+          "symbol": "𓊪",
+          "meaning": "King",
+          "pronunciation": "nesu"
+        }
+      ],
+      "distractors": [
+        {
+          "id": "distractor1",
+          "meaning": "Sand"
+        },
+        {
+          "id": "distractor2", 
+          "meaning": "Mountain"
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "name": "Anubis's Trial",
+    "difficulty": "medium",
+    "timeLimit": 90,
+    "description": "The jackal-headed god Anubis guards this chamber with trials that test your courage and wisdom. Navigate through the trapped corridor to prove your worthiness.",
+    "scribeMessage": "Anubis weighs your courage, traveler. Navigate his trials with wisdom and respect.",
+    "puzzleType": "trap-run",
+    "relic": 3,
+    "relicName": "Canopic Jar of Duamutef",
+    "puzzleData": {
+      "difficulty": "medium",
+      "timeLimit": 90,
+      "relic": 3,
+      "glyphs": [
+        {
+          "id": "anubis",
+          "symbol": "𓃦",
+          "meaning": "Anubis",
+          "pronunciation": "anpu"
+        },
+        {
+          "id": "death",
+          "symbol": "𓈖",
+          "meaning": "Death",
+          "pronunciation": "mut"
+        },
+        {
+          "id": "afterlife",
+          "symbol": "𓇳",
+          "meaning": "Afterlife",
+          "pronunciation": "duat"
+        },
+        {
+          "id": "mummy",
+          "symbol": "𓂋",
+          "meaning": "Mummy",
+          "pronunciation": "sahu"
+        },
+        {
+          "id": "protection",
+          "symbol": "𓋹",
+          "meaning": "Protection",
+          "pronunciation": "sa"
+        }
+      ],
+      "distractors": [
+        {
+          "id": "distractor3",
+          "meaning": "River"
+        },
+        {
+          "id": "distractor4",
+          "meaning": "Bird"
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "name": "Horus's Domain",
+    "difficulty": "hard",
+    "timeLimit": 80,
+    "description": "The falcon god Horus soars above this chamber, his piercing gaze seeing all truths. His eye represents divine protection and royal power.",
+    "scribeMessage": "The sky god watches from above. His sight reveals truths hidden from mortal eyes.",
+    "puzzleType": "glyph-match",
+    "relic": 4,
+    "relicName": "Eye of Horus",
+    "puzzleData": {
+      "difficulty": "hard",
+      "timeLimit": 80,
+      "relic": 4,
+      "glyphs": [
+        {
+          "id": "horus",
+          "symbol": "𓅃",
+          "meaning": "Horus",
+          "pronunciation": "heru"
+        },
+        {
+          "id": "falcon",
+          "symbol": "𓆣",
+          "meaning": "Falcon",
+          "pronunciation": "bik"
+        },
+        {
+          "id": "sky",
+          "symbol": "𓇯",
+          "meaning": "Sky",
+          "pronunciation": "pet"
+        },
+        {
+          "id": "royal",
+          "symbol": "𓈚",
+          "meaning": "Royal",
+          "pronunciation": "nesu"
+        },
+        {
+          "id": "power",
+          "symbol": "𓋹",
+          "meaning": "Power",
+          "pronunciation": "sekhem"
+        },
+        {
+          "id": "divine",
+          "symbol": "𓊹",
+          "meaning": "Divine",
+          "pronunciation": "netjer"
+        }
+      ],
+      "distractors": [
+        {
+          "id": "distractor5",
+          "meaning": "Bread"
+        },
+        {
+          "id": "distractor6",
+          "meaning": "House"
+        },
+        {
+          "id": "distractor7",
+          "meaning": "Boat"
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "name": "Thoth's Wisdom",
+    "difficulty": "hard",
+    "timeLimit": 75,
+    "description": "The ibis-headed god Thoth, master of wisdom and writing, challenges visitors with complex puzzles that test knowledge and intellect.",
+    "scribeMessage": "Thoth, keeper of divine knowledge, tests those who seek wisdom beyond mortal understanding.",
+    "puzzleType": "glyph-match",
+    "relic": 5,
+    "relicName": "Ibis Scroll of Thoth",
+    "puzzleData": {
+      "difficulty": "hard",
+      "timeLimit": 75,
+      "relic": 5,
+      "glyphs": [
+        {
+          "id": "thoth",
+          "symbol": "𓅱",
+          "meaning": "Thoth",
+          "pronunciation": "djehuty"
+        },
+        {
+          "id": "wisdom",
+          "symbol": "𓂧",
+          "meaning": "Wisdom",
+          "pronunciation": "sia"
+        },
+        {
+          "id": "writing",
+          "symbol": "𓏞",
+          "meaning": "Writing",
+          "pronunciation": "sebayt"
+        },
+        {
+          "id": "ibis",
+          "symbol": "𓅞",
+          "meaning": "Ibis",
+          "pronunciation": "hib"
+        },
+        {
+          "id": "knowledge",
+          "symbol": "𓂋",
+          "meaning": "Knowledge",
+          "pronunciation": "rekh"
+        },
+        {
+          "id": "scribe",
+          "symbol": "𓋞",
+          "meaning": "Scribe",
+          "pronunciation": "sesh"
+        }
+      ],
+      "distractors": [
+        {
+          "id": "distractor8",
+          "meaning": "Fish"
+        },
+        {
+          "id": "distractor9",
+          "meaning": "Tree"
+        },
+        {
+          "id": "distractor10",
+          "meaning": "Fire"
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "name": "Pharaoh's Antechamber",
+    "difficulty": "expert",
+    "timeLimit": 70,
+    "description": "The final chamber before the Pharaoh's Vault. Only those who have proven their worth through all previous trials may attempt to claim the ultimate treasure.",
+    "scribeMessage": "The pharaoh's greatest treasure awaits beyond this final test. Show that you are truly worthy.",
+    "puzzleType": "glyph-match",
+    "relic": 6,
+    "relicName": "Golden Pharaoh's Seal",
+    "puzzleData": {
+      "difficulty": "expert",
+      "timeLimit": 70,
+      "relic": 6,
+      "glyphs": [
+        {
+          "id": "pharaoh_seal",
+          "symbol": "𓊪",
+          "meaning": "Pharaoh",
+          "pronunciation": "per-aa"
+        },
+        {
+          "id": "gold",
+          "symbol": "𓋞",
+          "meaning": "Gold",
+          "pronunciation": "nebu"
+        },
+        {
+          "id": "eternity",
+          "symbol": "𓇳",
+          "meaning": "Eternity",
+          "pronunciation": "neheh"
+        },
+        {
+          "id": "treasure",
+          "symbol": "𓊪",
+          "meaning": "Treasure",
+          "pronunciation": "shefyt"
+        },
+        {
+          "id": "pyramid",
+          "symbol": "𓉴",
+          "meaning": "Pyramid",
+          "pronunciation": "mer"
+        },
+        {
+          "id": "dynasty",
+          "symbol": "𓊹",
+          "meaning": "Dynasty",
+          "pronunciation": "per"
+        },
+        {
+          "id": "sacred",
+          "symbol": "𓋹",
+          "meaning": "Sacred",
+          "pronunciation": "djeser"
+        }
+      ],
+      "distractors": [
+        {
+          "id": "distractor11",
+          "meaning": "Cloth"
+        },
+        {
+          "id": "distractor12",
+          "meaning": "Stone"
+        },
+        {
+          "id": "distractor13",
+          "meaning": "Reed"
+        },
+        {
+          "id": "distractor14",
+          "meaning": "Wind"
+        }
+      ]
+    }
+  }
+]
