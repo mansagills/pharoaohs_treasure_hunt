@@ -214,14 +214,17 @@ class GlyphMatchPuzzle {
     
     drawMatchingLine(glyphElement, meaningElement) {
         const svg = this.container.querySelector('#matching-lines');
+        const matchingArea = this.container.querySelector('.glyph-matching-area');
+        
         const glyphRect = glyphElement.getBoundingClientRect();
         const meaningRect = meaningElement.getBoundingClientRect();
-        const containerRect = this.container.getBoundingClientRect();
+        const areaRect = matchingArea.getBoundingClientRect();
         
-        const x1 = glyphRect.right - containerRect.left;
-        const y1 = glyphRect.top + (glyphRect.height / 2) - containerRect.top;
-        const x2 = meaningRect.left - containerRect.left;
-        const y2 = meaningRect.top + (meaningRect.height / 2) - containerRect.top;
+        // Calculate positions relative to the matching area
+        const x1 = glyphRect.right - areaRect.left;
+        const y1 = glyphRect.top + (glyphRect.height / 2) - areaRect.top;
+        const x2 = meaningRect.left - areaRect.left;
+        const y2 = meaningRect.top + (meaningRect.height / 2) - areaRect.top;
         
         const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
         line.setAttribute('x1', x1);
@@ -234,6 +237,10 @@ class GlyphMatchPuzzle {
         line.classList.add('match-line');
         
         svg.appendChild(line);
+        
+        // Update SVG size to match the matching area
+        svg.style.width = areaRect.width + 'px';
+        svg.style.height = areaRect.height + 'px';
     }
     
     clearSelections() {
@@ -287,19 +294,60 @@ class GlyphMatchPuzzle {
         
         const randomGlyph = unmatchedGlyphs[Math.floor(Math.random() * unmatchedGlyphs.length)];
         const glyphElement = this.container.querySelector(`[data-glyph-id="${randomGlyph.id}"]`);
-        const meaningElement = this.container.querySelector(`[data-meaning-id="${randomGlyph.id}"]`);
         
+        // Only highlight the glyph, not the answer
         glyphElement.classList.add('hint-highlight');
-        meaningElement.classList.add('hint-highlight');
         
         setTimeout(() => {
             glyphElement.classList.remove('hint-highlight');
-            meaningElement.classList.remove('hint-highlight');
-        }, 3000);
+        }, 4000);
         
         this.hintsUsed++;
         this.updateHintCounter();
-        this.showFeedback(`Hint: The symbol "${randomGlyph.symbol}" means "${randomGlyph.meaning}"`, 'hint');
+        
+        // Provide educational hints instead of direct answers
+        const hintMessage = this.getEducationalHint(randomGlyph);
+        this.showFeedback(hintMessage, 'hint');
+    }
+    
+    getEducationalHint(glyph) {
+        const hints = {
+            'ankh': 'This cross-like symbol was carried by Egyptian gods and represents eternal existence.',
+            'eye': 'Ancient Egyptians believed this organ was very important and preserved it in special jars.',
+            'sun': 'The Egyptians worshipped Ra, the god of this bright celestial body.',
+            'water': 'The Nile River was the source of this essential element for all Egyptian life.',
+            'feather': 'Ma\'at wore this light object that was used to judge souls in the afterlife.',
+            'scales': 'This tool was used by Ma\'at to weigh hearts against her feather.',
+            'heart': 'Egyptians believed this organ was the center of intelligence and emotion.',
+            'soul': 'One part of the Egyptian spirit that could travel freely after death.',
+            'pharaoh': 'The divine ruler of Egypt, considered to be a living god.',
+            'anubis': 'This jackal-headed god guided souls through the underworld.',
+            'death': 'Egyptians prepared carefully for this transition to the afterlife.',
+            'afterlife': 'The realm where worthy souls lived forever after death.',
+            'mummy': 'Bodies were preserved this way to last for eternity.',
+            'protection': 'Amulets and symbols were used to provide this against evil.',
+            'horus': 'The falcon-headed sky god whose eye was a powerful symbol.',
+            'falcon': 'This bird of prey was sacred to the sky god.',
+            'sky': 'Domain of the falcon god, stretching above all Egypt.',
+            'royal': 'Relating to the divine pharaohs who ruled Egypt.',
+            'power': 'What the pharaohs possessed as living gods.',
+            'divine': 'The sacred nature of Egyptian gods and pharaohs.',
+            'thoth': 'The ibis-headed god of wisdom and writing.',
+            'wisdom': 'What scholars and scribes sought through learning.',
+            'writing': 'The art that scribes mastered using hieroglyphs.',
+            'ibis': 'This long-beaked bird was sacred to the god of wisdom.',
+            'knowledge': 'What was preserved in scrolls and temple walls.',
+            'scribe': 'Educated person who could read and write hieroglyphs.',
+            'pharaoh_seal': 'The divine ruler whose authority was absolute.',
+            'gold': 'Precious metal associated with the gods and eternity.',
+            'eternity': 'The endless time that pharaohs hoped to rule.',
+            'treasure': 'Valuable objects buried with pharaohs for the afterlife.',
+            'pyramid': 'Massive stone tomb built for pharaohs.',
+            'dynasty': 'A family line of rulers that lasted for generations.',
+            'sacred': 'Holy and blessed by the gods.'
+        };
+        
+        return `Hint: ${hints[glyph.id] || 'Think about what this symbol might represent in ancient Egypt.'}`;
     }
     
     updateHintCounter() {
@@ -602,11 +650,15 @@ document.addEventListener('DOMContentLoaded', () => {
             bottom: 0;
             pointer-events: none;
             z-index: 1;
+            overflow: visible;
         }
         
         .matching-lines {
             width: 100%;
             height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         
         .match-line {
